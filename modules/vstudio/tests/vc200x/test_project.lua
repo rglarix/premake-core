@@ -212,3 +212,28 @@
 		]]
 	end
 
+--
+-- Tests scc parameters
+--
+
+	function suite.structureSCC()
+		prj = test.getproject(wks, 1)
+		prj.sccproject = "test_scc_prj";
+		prj.scclocalpath = "test_scc_path";
+		prj.sccprovider = "test_scc_provider";
+		prepare()
+		test.capture [[
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9.00"
+	Name="MyProject"
+	ProjectGUID="{AE61726D-187C-E440-BD07-2556188A6565}"
+	RootNamespace="MyProject"
+	SccProjectName="test_scc_prj"
+	SccLocalPath="test_scc_path"
+	SccProvider="test_scc_provider"
+	Keyword="Win32Proj"
+	TargetFrameworkVersion="0"
+	>
+		]]
+	end

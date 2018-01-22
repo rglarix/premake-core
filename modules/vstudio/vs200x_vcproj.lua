@@ -56,6 +56,7 @@
 			m.projectName,
 			m.projectGUID,
 			m.rootNamespace,
+			m.sccProject,
 			m.keyword,
 			m.targetFrameworkVersion
 		}
@@ -1412,6 +1413,17 @@
 		p.w('ProjectType="Visual C++"')
 	end
 
+	function m.sccProject(prj)
+        if prj.sccproject then 
+            p.w('SccProjectName="%s"', prj.sccproject)
+        end
+        if prj.scclocalpath then 
+            p.w('SccLocalPath="%s"', prj.scclocalpath)
+        end
+        if prj.sccprovider then 
+            p.w('SccProvider="%s"', prj.sccprovider)
+        end
+	end
 
 
 	function m.reBuildCommandLine(cfg)

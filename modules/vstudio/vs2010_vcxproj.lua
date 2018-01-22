@@ -125,6 +125,7 @@
 			m.projectGuid,
 			m.ignoreWarnDuplicateFilename,
 			m.keyword,
+			m.sccProject,
 			m.projectName,
 			m.preferredToolArchitecture,
 			m.targetPlatformVersionGlobal,
@@ -2306,6 +2307,17 @@
 		m.element("ProjectGuid", nil, "{%s}", prj.uuid)
 	end
 
+	function m.sccProject(prj)
+        if prj.sccproject then 
+            m.element("SccProjectName", nil, "%s", prj.sccproject)
+        end
+        if prj.scclocalpath then 
+            m.element("SccLocalPath", nil, "%s", prj.scclocalpath)
+        end
+        if prj.sccprovider then 
+            m.element("SccProvider", nil, "%s", prj.sccprovider)
+        end
+	end
 
 	function m.projectName(prj)
 		if prj.name ~= prj.filename then

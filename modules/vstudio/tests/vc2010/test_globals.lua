@@ -343,4 +343,27 @@
 </PropertyGroup>
 		]]
 	end
-	
+
+--
+-- Tests scc parameters
+--
+
+	function suite.structureSCC()
+		prj = test.getproject(wks, 1)
+		prj.sccproject = "test_scc_prj";
+		prj.scclocalpath = "test_scc_path";
+		prj.sccprovider = "test_scc_provider";
+		prepare()
+		test.capture [[
+<PropertyGroup Label="Globals">
+	<ProjectGuid>{42B5DBC6-AE1F-903D-F75D-41E363076E92}</ProjectGuid>
+	<Keyword>Win32Proj</Keyword>
+	<RootNamespace>MyProject</RootNamespace>
+	<SccProjectName>test_scc_prj</SccProjectName>
+	<SccLocalPath>test_scc_path</SccLocalPath>
+	<SccProvider>test_scc_provider</SccProvider>
+</PropertyGroup>
+		]]
+	end
+
+		

@@ -1036,6 +1036,27 @@
 	}
 
 	api.register {
+		name = "sccproject",
+		scope = "project",
+		kind = "string",
+		tokens = true,
+	}
+
+	api.register {
+		name = "sccprovider",
+		scope = "project",
+		kind = "string",
+		tokens = true,
+	}
+
+	api.register {
+		name = "scclocalpath",
+		scope = "project",
+		kind = "path",
+		tokens = true,
+	}
+
+	api.register {
 		name = "startproject",
 		scope = "workspace",
 		kind = "string",
